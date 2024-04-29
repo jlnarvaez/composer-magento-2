@@ -19,5 +19,7 @@
     <type name="Magento\Framework\App\Request\CsrfValidator">
         <plugin name="csrf_validator_skip" type="Paycomet\Payment\Plugin\Csrf" />
     </type>
-    <preference for="Magento\Sales\Model\Order" type="Paycomet\Payment\Model\Order" />
+    <type name="Magento\Sales\Model\Order">
+        <plugin name="paycomet_order" type="Paycomet\Payment\Plugin\OrderPlugin" />
+    </type>
 </config>
